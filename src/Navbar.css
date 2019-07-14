@@ -1,0 +1,89 @@
+.Navbar {
+	height: 80px;
+	background-color: #830;
+	width: 100vw;
+
+	position: sticky;
+	top: 0;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	border-bottom: 2px solid red;
+
+	border-top: 4px dotted #00ced1;
+}
+
+.Navbar h1 {
+	margin-left: 20px;
+	color: #f30;
+}
+
+.Navbar ul {
+	list-style: none;
+	padding: 0;
+	display: flex;
+}
+
+.Navbar ul li {
+	margin: 3px;
+	border: 2px solid gold;
+	border-radius: 5px;
+}
+
+.Navbar ul li:first-child {
+  display: none;
+}
+
+.Navbar ul li div {
+  background-color: #830;
+  border-radius: 4px;
+  padding: 20px;
+  font-weight: 800;
+}
+
+.Navbar ul li div:hover {
+  color: red;
+}
+
+.Navbar ul li div:active {
+  color: red;
+  text-shadow: 2px 2px black;
+}
+
+.Navbar ul a {
+	color: #f30;
+	text-decoration: none;
+}
+
+.Navbar ul a:hover {
+	color: lightgrey;
+}
+
+@media (max-width: 640px) {
+	.Navbar ul {
+    margin-top: 8px;
+    text-align: center;
+    height: 65px;
+    overflow: hidden;
+    flex-direction: column;
+    align-self: start;
+  }
+
+  .Navbar ul:hover {
+    height: initial;
+  }
+
+  .Navbar ul li:first-child {
+    display: block;
+  }
+
+  .Navbar ul li:first-child div {
+  	padding: 9px 0 6px;
+  }
+
+  .Navbar ul li:first-child img {
+  	height: 40px;
+  }
+}
