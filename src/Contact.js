@@ -1,5 +1,6 @@
 import React from 'react';
 import './Contact.css';
+import emailRegex from  './emailRegex';
 import OverTextarea from './OverTextarea';
 
 class Contact extends React.Component {
@@ -7,6 +8,7 @@ class Contact extends React.Component {
 		name: '',
 		message: '',
 		email: '',
+		isEmailValid: false,
 		isMessageTooLong: false,
 	}
 
@@ -18,7 +20,8 @@ class Contact extends React.Component {
 
 	setEmail = (event)=> {
 		this.setState({
-			email: event.target.value
+			email: event.target.value,
+			isEmailValid: emailRegex.test(event.target.value),
 		})
 	}
 
@@ -55,8 +58,8 @@ class Contact extends React.Component {
 								  onChange={this.setMessage} />
 
 					<button onClick={this.submit}
-							disabled={this.state.isMessageTooLong}>
-					Submit
+							disabled={this.state.isMessageTooLong || !this.state.isEmailValid}>
+							Submit
 					</button>
 				</div>
 			</div>
